@@ -60,3 +60,40 @@ success_msg("Good work! Don't forget to look at the output of your work in the c
 ```
 
 
+
+--- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:739f24d293
+## Inspecting data.frame objects
+
+In the previous exercise, you checked out your data by using the function `head()` to display the first five rows of your data. Here you'll use `str()` to dive deeper into the dataset, which is already loaded into `surveys`. In the console provided, use `str()` on `surveys`, check out the output and answer the following questions: what is the class of the object `surveys`? How many rows and how many columns are in this object? How many species have been recorded during these surveys?
+
+[HBA] TBD: incorrect solutions [/HBA]
+
+
+*** =instructions
+- `surveys` is of class `data.frame`, has 13 rows, 34,786 columns and 40 species have been recorded.
+- `surveys` is of class `record_id`, has 13 rows, 34,786 columns and 40 species have been recorded.
+- `surveys` is of class `data.frame`, has 34,786 rows,  columns and 40 species have been recorded.
+- `surveys` is of class `data.frame`, has 34,786 rows,  columns and 26 species have been recorded.
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+dir.create("data")
+
+# Download the file to your local file system
+download.file("https://ndownloader.figshare.com/files/2292169",
+              "data/portal_data_joined.csv")
+
+# Import the file into a dataframe: surveys              
+surveys <- read.csv('data/portal_data_joined.csv')
+```
+
+*** =sct
+```{r}
+test_mc(correct = 3, 
+        feedback_msgs = c("Incorrect. You may have mistaken rows for columns: check the output of `str(surveys)` again, remembering that the number of rows is the number of observations and the number of of columns is the number of variables.",
+                          "Incorrect: `surveys` is not of class `record_id`. The first thing `str(surveys)` reports is the class.",
+                          "Correct! Check out the output of `str(surveys)` more closely and see what other information you clean glean about the dataset there.",
+                          "Incorrect: 26 genera (plural of genus!) have been recorded, not 26 species."))
+```
