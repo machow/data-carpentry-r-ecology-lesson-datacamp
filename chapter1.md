@@ -54,6 +54,15 @@ head(surveys)
 
 *** =sct
 ```{r}
+test_function_v2('download.file', args=c('url', 'destfile'))
+
+test_correct(
+    test_object('surveys'), 
+    test_function_v2('read.csv', args =c('file')))
+
+ex() %>% check_function('head') %>% 
+         check_arg('x') %>% 
+         check_equal('Try using `head(surveys)`.')
 
 
 success_msg("Good work! Don't forget to look at the output of your work in the console and see what you can notice about the dataset that you have imported: what are the column names? What are the values?")
