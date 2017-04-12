@@ -1,6 +1,6 @@
 ---
 title       : Starting with data
-description : In this exercises, we'll import a dataset containing ecological data of animal species and weights. We'll then explore the data!
+description : In these exercises, we'll import a dataset containing ecological data of animal species and weights. We'll then explore the data!
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
